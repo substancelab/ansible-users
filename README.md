@@ -26,8 +26,7 @@ The following attributes are required for each user:
 
 * username - The user's username.
 * name - The full name of the user (gecos field)
-* uid - The numeric user id for the user. This is required for uid consistency
-  across systems.
+* ~~uid - The numeric user id for the user. This is required for uid consistency across systems.~~ **(Local edit: IGNORED)**
 * password - If a hash is provided then that will be used, but otherwise the
   account will be locked
 * groups - a list of supplementary groups for the user.
@@ -47,14 +46,12 @@ Example:
       - username: foo
         name: Foo Barrington
         groups: ['wheel','systemd-journal']
-        uid: 1001
         ssh_key:
           - "ssh-rsa AAAAA.... foo@machine"
           - "ssh-rsa AAAAB.... foo2@machine"
     users_deleted:
       - username: bar
         name: Bar User
-        uid: 1002
 
 ## Deleting users
 

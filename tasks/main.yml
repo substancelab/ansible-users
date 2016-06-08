@@ -5,7 +5,7 @@
   tags: ['users','groups','configuration']
 
 - name: Per-user group creation
-  group: name="{{item.username}}" gid="{{item.uid}}"
+  group: name="{{item.username}}"
   with_items: users
   when: users_create_per_user_group
   tags: ['users','configuration']
@@ -18,7 +18,6 @@
         shell={{item.shell if item.shell is defined else users_default_shell}}
         password="{{item.password if item.password is defined else '!'}}"
         comment="{{item.name}}"
-        uid="{{item.uid}}"
         createhome="{{'yes' if users_create_homedirs else 'no'}}"
   with_items: users
   tags: ['users','configuration']
