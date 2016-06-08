@@ -1,8 +1,15 @@
-[![Build Status](https://travis-ci.org/mivok/ansible-users.png)](https://travis-ci.org/mivok/ansible-users)
-
 # Users role
 
 Role to manage users on a system.
+
+## This is a fork
+
+This is a fork of mivok/ansible-users. It has been customized for our use and
+might not fit your use cases. Hopefully some of these changes will make their
+way upstream.
+
+* uids are dynamic and cannot be configured
+* We use no bare variables
 
 ## Role configuration
 
@@ -26,7 +33,6 @@ The following attributes are required for each user:
 
 * username - The user's username.
 * name - The full name of the user (gecos field)
-* ~~uid - The numeric user id for the user. This is required for uid consistency across systems.~~ **(Local edit: IGNORED)**
 * password - If a hash is provided then that will be used, but otherwise the
   account will be locked
 * groups - a list of supplementary groups for the user.
